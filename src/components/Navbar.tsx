@@ -7,7 +7,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <img src="Public\logo32x32.webp" alt="PingProspect" />
+              <img src="logo32x32.webp" alt="PingProspect" />
               <span className="text-xl font-bold text-gray-900">PingProspect</span>
             </Link>
           </div>
