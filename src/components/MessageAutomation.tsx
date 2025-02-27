@@ -33,7 +33,7 @@ export default function MessageAutomation() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl transform -rotate-3"></div>
               <img
-                src="Public\conversation.webp"
+                src="conversation.webp"
                 alt="Message Automation Interface"
                 className="relative rounded-2xl shadow-lg"
               />
