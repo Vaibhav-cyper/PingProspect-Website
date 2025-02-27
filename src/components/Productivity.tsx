@@ -30,7 +30,7 @@ export default function ClientManagement() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-3xl transform rotate-3"></div>
               <img
-                src="Public\productive.webp"
+                src="productive.webp"
                 alt="Client Management Dashboard"
                 className="relative rounded-2xl shadow-lg"
               />
