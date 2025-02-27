@@ -25,7 +25,7 @@ export default function AutomationDashboard() {
           <div className="lg:w-1/2">
             <div className="relative absolute inset-0 bg-blue-500  p-4 rounded-2xl shadow-xl">
               <img
-                src="Public\reach.webp"
+                src="reach.webp"
                 alt="Analytics Dashboard"
                 className="rounded-xl w-lg h-lg"
               />
