@@ -1,4 +1,3 @@
-
 import { Download, FolderOpen, MessageSquare, PlayCircle } from 'lucide-react';
 
 const steps = [
@@ -46,13 +45,6 @@ export default function HowItWorks() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="mt-16 flex justify-center">
-          <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-            <PlayCircle className="h-5 w-5 mr-2" />
-            Watch Demo
-          </button>
         </div>
       </div>
     </section>
