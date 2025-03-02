@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
@@ -15,7 +15,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <Send className="h-6 w-6 text-blue-600" />
+              <img src="logo32x32.webp" alt="PingProspect" />
               <span className="text-xl font-bold text-gray-900">PingProspect</span>
             </Link>
           </div>
