@@ -23,7 +23,6 @@ export default function Footer() {
             <li><FooterLink to="/features">Features</FooterLink></li>
             <li><FooterLink to="/pricing">Pricing</FooterLink></li>
             <li><FooterLink to="/download">Download</FooterLink></li>
-            <li><FooterLink to="/early-access">Early Access</FooterLink></li>
           </FooterSection>
 
           {/* Company Section */}
