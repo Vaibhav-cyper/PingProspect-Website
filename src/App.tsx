@@ -11,7 +11,7 @@ import Terms from './pages/Terms/Terms';
 import GuideList from './pages/Guide/GuideList';
 import BlogPost from './pages/Guide/BlogPost';
 import FAQ from './components/FAQ/FAQ';
-
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -29,6 +29,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>
