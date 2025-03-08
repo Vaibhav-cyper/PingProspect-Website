@@ -10,7 +10,7 @@ const LinuxIcon = () => <FaLinux className="h-8 w-8" />;
 
 export default function DownloadPage() {
   const downloadWindows = () => {
-    window.location.href = 'https://github.com/Vaibhav-cyper/PingProspect-Relasesver/releases/latest/download/pingprospect.exe';
+    window.location.href = 'https://github.com/Vaibhav-cyper/PingProspect-Relasesver/releases/latest/download/pingprospect.Setup.exe';
   };
 
   const downloadLinuxDeb = () => {
