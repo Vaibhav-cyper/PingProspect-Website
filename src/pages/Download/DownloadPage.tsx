@@ -52,7 +52,7 @@ export default function DownloadPage() {
       timestamp: new Date().toISOString()
     });
     
-    window.location.href = 'https://github.com/Vaibhav-cyper/PingProspect-Relasesver/releases/latest/download/pingprospect.exe';
+    window.location.href = 'https://github.com/Vaibhav-cyper/PingProspect-Relasesver/releases/latest/download/pingprospect.Setup.exe';
   };
 
   React.useEffect(() => {
