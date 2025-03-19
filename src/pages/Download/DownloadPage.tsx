@@ -1,8 +1,7 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { FaWindows } from "react-icons/fa";
 import { MonitorDown, Shield, Cpu, HardDrive, Download, CheckCircle } from 'lucide-react';
 import DownloadHero from './DownloadHero';
-import { trackEvent, ANALYTICS_EVENTS } from '../../utils/analytics';
 
 const features = [
   {
@@ -29,7 +28,7 @@ const requirements = [
   },
   {
     icon: Cpu,
-    text: "4GB RAM minimum"
+    text: "8GB RAM minimum"
   },
   {
     icon: HardDrive,
@@ -45,22 +44,35 @@ const steps = [
 ];
 
 export default function DownloadPage() {
-  const downloadWindows = () => {
-    // Track the download event
-    trackEvent(ANALYTICS_EVENTS.DOWNLOAD_WINDOWS, {
-      source: 'download_page',
-      timestamp: new Date().toISOString()
-    });
-    
-    window.location.href = 'https://github.com/Vaibhav-cyper/PingProspect-Relasesver/releases/latest/download/pingprospect-Setup.exe';
-  };
+  // State to store the download URL and loading status
+  const [downloadUrl, setDownloadUrl] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
-  React.useEffect(() => {
-    // Track page view
-    trackEvent(ANALYTICS_EVENTS.PAGE_VIEW, {
-      page: 'download',
-      timestamp: new Date().toISOString()
-    });
+  // Fetch the latest release on component mount
+  useEffect(() => {
+    const fetchLatestRelease = async () => {
+      try {
+        const response = await fetch('https://api.github.com/repos/Vaibhav-cyper/PingProspect-Relasesver/releases/latest');
+        if (!response.ok) {
+          throw new Error('Failed to fetch release data');
+        }
+        const data = await response.json();
+        // Find the asset that matches the pattern for the Windows executable
+        const asset = data.assets.find(asset => 
+          asset.name.startsWith('pingprospect-Setup-') && asset.name.endsWith('.exe')
+        );
+        if (asset) {
+          setDownloadUrl(asset.browser_download_url);
+        } else {
+          console.warn('No matching .exe asset found in the latest release');
+        }
+      } catch (error) {
+        console.error('Error fetching latest release:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchLatestRelease();
   }, []);
 
   return (
@@ -79,7 +91,7 @@ export default function DownloadPage() {
                 <FaWindows className="h-8 w-8 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900">Windows Version</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Windows</h3>
                 <p className="text-gray-600">For Windows 10 and above</p>
               </div>
             </div>
@@ -99,13 +111,26 @@ export default function DownloadPage() {
               ))}
             </div>
 
-            <button
-              onClick={downloadWindows}
-              className="w-full flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-colors group"
-            >
-              <MonitorDown className="h-6 w-6 mr-2 group-hover:animate-bounce" />
-              Download for Windows
-            </button>
+            {/* Conditional rendering based on loading state and download URL */}
+            {isLoading ? (
+              <div className="w-full flex items-center justify-center px-8 py-4 bg-gray-200 text-gray-600 text-lg rounded-xl font-medium">
+                Loading...
+              </div>
+            ) : downloadUrl ? (
+              <a
+                href={downloadUrl}
+                className="w-full flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg rounded-xl font-medium transition-colors group"
+                download
+                rel="noopener noreferrer"
+              >
+                <MonitorDown className="h-8 w-6 mr-2" />
+                Download for Windows
+              </a>
+            ) : (
+              <div className="w-full flex items-center justify-center px-8 py-4 bg-gray-200 text-gray-600 text-lg rounded-xl font-medium">
+                Download not available
+              </div>
+            )}
           </div>
         </div>
 
