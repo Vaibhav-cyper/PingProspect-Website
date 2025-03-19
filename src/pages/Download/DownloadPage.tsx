@@ -43,6 +43,15 @@ const steps = [
   "Launch PingProspect and start automating"
 ];
 
+interface GitHubAsset {
+  name: string;
+  browser_download_url: string;
+}
+
+interface GitHubRelease {
+  assets: GitHubAsset[];
+}
+
 export default function DownloadPage() {
   // State to store the download URL and loading status
   const [downloadUrl, setDownloadUrl] = useState('');
@@ -56,7 +65,7 @@ export default function DownloadPage() {
         if (!response.ok) {
           throw new Error('Failed to fetch release data');
         }
-        const data = await response.json();
+        const data: GitHubRelease = await response.json();
         // Find the asset that matches the pattern for the Windows executable
         const asset = data.assets.find(asset => 
           asset.name.startsWith('pingprospect-Setup-') && asset.name.endsWith('.exe')
