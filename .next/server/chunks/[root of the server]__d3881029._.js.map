@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 60, "column": 0}, "map": {"version":3,"sources":["file://E%3A/PingProspect/pingprospect-nextapp/app/api/ValidateUser/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\n\r\n        \r\nconst idToken = localStorage.getItem(\"9faa6749c8e64bf95192af3f2fedc5e1\")\r\nexport function GET(){\r\n    return NextResponse.json({\r\n        Token : idToken\r\n    })\r\n}"],"names":[],"mappings":";;;AAAA;;AAGA,MAAM,UAAU,aAAa,OAAO,CAAC;AAC9B,SAAS;IACZ,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;QACrB,OAAQ;IACZ;AACJ","debugId":null}}]
+}
