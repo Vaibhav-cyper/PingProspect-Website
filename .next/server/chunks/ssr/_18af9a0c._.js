@@ -602,15 +602,22 @@ __turbopack_context__.n(__turbopack_context__.i("[project]/node_modules/next/dis
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */ __turbopack_context__.s({
     "mergeClasses": (()=>mergeClasses),
-    "toKebabCase": (()=>toKebabCase)
+    "toCamelCase": (()=>toCamelCase),
+    "toKebabCase": (()=>toKebabCase),
+    "toPascalCase": (()=>toPascalCase)
 });
 const toKebabCase = (string)=>string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+const toCamelCase = (string)=>string.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2)=>p2 ? p2.toUpperCase() : p1.toLowerCase());
+const toPascalCase = (string)=>{
+    const camelCase = toCamelCase(string);
+    return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
 const mergeClasses = (...classes)=>classes.filter((className, index, array)=>{
         return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
     }).join(" ").trim();
@@ -623,7 +630,7 @@ const mergeClasses = (...classes)=>classes.filter((className, index, array)=>{
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -650,7 +657,7 @@ var defaultAttributes = {
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -689,7 +696,7 @@ const Icon = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -706,10 +713,10 @@ const createLucideIcon = (iconName, iconNode)=>{
     const Component = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["forwardRef"])(({ className, ...props }, ref)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["createElement"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$Icon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
             ref,
             iconNode,
-            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["mergeClasses"])(`lucide-${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["toKebabCase"])(iconName)}`, className),
+            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["mergeClasses"])(`lucide-${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["toKebabCase"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["toPascalCase"])(iconName))}`, `lucide-${iconName}`, className),
             ...props
         }));
-    Component.displayName = `${iconName}`;
+    Component.displayName = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["toPascalCase"])(iconName);
     return Component;
 };
 ;
@@ -721,7 +728,7 @@ const createLucideIcon = (iconName, iconNode)=>{
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -740,7 +747,7 @@ const __iconNode = [
         }
     ]
 ];
-const Zap = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("Zap", __iconNode);
+const Zap = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("zap", __iconNode);
 ;
  //# sourceMappingURL=zap.js.map
 }}),
@@ -760,7 +767,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -779,7 +786,7 @@ const __iconNode = [
         }
     ]
 ];
-const MessageSquare = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("MessageSquare", __iconNode);
+const MessageSquare = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("message-square", __iconNode);
 ;
  //# sourceMappingURL=message-square.js.map
 }}),
@@ -799,7 +806,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -835,7 +842,7 @@ const __iconNode = [
         }
     ]
 ];
-const Upload = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("Upload", __iconNode);
+const Upload = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("upload", __iconNode);
 ;
  //# sourceMappingURL=upload.js.map
 }}),
@@ -855,7 +862,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -897,7 +904,7 @@ const __iconNode = [
         }
     ]
 ];
-const Users = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("Users", __iconNode);
+const Users = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("users", __iconNode);
 ;
  //# sourceMappingURL=users.js.map
 }}),
@@ -917,7 +924,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -975,7 +982,7 @@ const __iconNode = [
         }
     ]
 ];
-const Bot = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("Bot", __iconNode);
+const Bot = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("bot", __iconNode);
 ;
  //# sourceMappingURL=bot.js.map
 }}),
@@ -995,7 +1002,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -1035,7 +1042,7 @@ const __iconNode = [
         }
     ]
 ];
-const RefreshCw = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("RefreshCw", __iconNode);
+const RefreshCw = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("refresh-cw", __iconNode);
 ;
  //# sourceMappingURL=refresh-cw.js.map
 }}),
@@ -1055,7 +1062,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -1081,7 +1088,7 @@ const __iconNode = [
         }
     ]
 ];
-const ArrowRight = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("ArrowRight", __iconNode);
+const ArrowRight = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("arrow-right", __iconNode);
 ;
  //# sourceMappingURL=arrow-right.js.map
 }}),
@@ -1101,7 +1108,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -1131,7 +1138,7 @@ const __iconNode = [
         }
     ]
 ];
-const Mail = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("Mail", __iconNode);
+const Mail = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])("mail", __iconNode);
 ;
  //# sourceMappingURL=mail.js.map
 }}),

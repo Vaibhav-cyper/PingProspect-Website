@@ -27,12 +27,10 @@ export default function Preview() {
                 height="100%"
                 // Configure Vimeo to hide extra info (title, byline, portrait).
                 config={{
-                  vimeo: {
-                    playerOptions: {
-                      title: false,
-                      byline: false,
-                      portrait: false,
-                    },
+                  playerOptions: {
+                    title: false,
+                    byline: false,
+                    portrait: false,
                   },
                 }}
               />
@@ -40,7 +38,7 @@ export default function Preview() {
               <>
                 {/* Thumbnail Image */}
                 <img
-                  src="/PingProspect Thumbnail.png"
+                  src="VideoThumbnail.png"
                   alt="PingProspect Interface"
                   className="w-full h-full object-cover"
                 />

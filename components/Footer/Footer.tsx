@@ -1,6 +1,6 @@
 import FooterLink from './FooterLink';
 import FooterSection from './FooterSection';
-import Image from "next/image"
+
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-            <Image src="/logo32x32.webp" width={32} height={32} alt="PingProspect" />
+            <img src="logo32x32.webp" width={32} height={32} alt="PingProspect" />
               <span className="text-xl font-bold text-gray-900">PingProspect</span>
             </div>
             <p className="text-gray-500 mb-4">

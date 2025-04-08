@@ -1,7 +1,7 @@
-import { getguide } from "@/lib/services/blog"; // Adjust the import path as per your project structure
+import { getguide } from "../../../lib/services/blog"; // Adjust the import path as per your project structure
 import { Metadata } from "next";
 import { Post } from "../guides";
-import { urlFor } from "@/lib/image";
+import { urlFor } from "../../../lib/image";
 
 // Define props for the layout
 type Props = {

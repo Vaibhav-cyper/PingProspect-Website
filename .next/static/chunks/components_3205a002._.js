@@ -41,12 +41,10 @@ function Preview() {
                         height: "100%",
                         // Configure Vimeo to hide extra info (title, byline, portrait).
                         config: {
-                            vimeo: {
-                                playerOptions: {
-                                    title: false,
-                                    byline: false,
-                                    portrait: false
-                                }
+                            playerOptions: {
+                                title: false,
+                                byline: false,
+                                portrait: false
                             }
                         }
                     }, void 0, false, {
@@ -56,12 +54,12 @@ function Preview() {
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                src: "/PingProspect Thumbnail.png",
+                                src: "VideoThumbnail.png",
                                 alt: "PingProspect Interface",
                                 className: "w-full h-full object-cover"
                             }, void 0, false, {
                                 fileName: "[project]/components/Preview.tsx",
-                                lineNumber: 42,
+                                lineNumber: 40,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -74,19 +72,19 @@ function Preview() {
                                             className: "h-5 w-5 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Preview.tsx",
-                                            lineNumber: 53,
+                                            lineNumber: 51,
                                             columnNumber: 21
                                         }, this),
                                         "Watch Demo"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Preview.tsx",
-                                    lineNumber: 49,
+                                    lineNumber: 47,
                                     columnNumber: 19
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/Preview.tsx",
-                                lineNumber: 48,
+                                lineNumber: 46,
                                 columnNumber: 17
                             }, this)
                         ]

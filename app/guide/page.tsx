@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Book, Calendar } from "lucide-react";
 import { getallguides } from "../../lib/services/blog";
-import { urlFor } from "@/lib/image";
+import { urlFor } from "../../lib/image";
 import { Post } from "./guides";
 
 

@@ -39,12 +39,10 @@ function Preview() {
                         height: "100%",
                         // Configure Vimeo to hide extra info (title, byline, portrait).
                         config: {
-                            vimeo: {
-                                playerOptions: {
-                                    title: false,
-                                    byline: false,
-                                    portrait: false
-                                }
+                            playerOptions: {
+                                title: false,
+                                byline: false,
+                                portrait: false
                             }
                         }
                     }, void 0, false, {
@@ -54,12 +52,12 @@ function Preview() {
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                src: "/PingProspect Thumbnail.png",
+                                src: "VideoThumbnail.png",
                                 alt: "PingProspect Interface",
                                 className: "w-full h-full object-cover"
                             }, void 0, false, {
                                 fileName: "[project]/components/Preview.tsx",
-                                lineNumber: 42,
+                                lineNumber: 40,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -72,19 +70,19 @@ function Preview() {
                                             className: "h-5 w-5 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/components/Preview.tsx",
-                                            lineNumber: 53,
+                                            lineNumber: 51,
                                             columnNumber: 21
                                         }, this),
                                         "Watch Demo"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/Preview.tsx",
-                                    lineNumber: 49,
+                                    lineNumber: 47,
                                     columnNumber: 19
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/Preview.tsx",
-                                lineNumber: 48,
+                                lineNumber: 46,
                                 columnNumber: 17
                             }, this)
                         ]
@@ -2881,15 +2879,22 @@ module.exports = createReactPlayer([
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */ __turbopack_context__.s({
     "mergeClasses": (()=>mergeClasses),
-    "toKebabCase": (()=>toKebabCase)
+    "toCamelCase": (()=>toCamelCase),
+    "toKebabCase": (()=>toKebabCase),
+    "toPascalCase": (()=>toPascalCase)
 });
 const toKebabCase = (string)=>string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+const toCamelCase = (string)=>string.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2)=>p2 ? p2.toUpperCase() : p1.toLowerCase());
+const toPascalCase = (string)=>{
+    const camelCase = toCamelCase(string);
+    return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
 const mergeClasses = (...classes)=>classes.filter((className, index, array)=>{
         return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
     }).join(" ").trim();
@@ -2902,7 +2907,7 @@ const mergeClasses = (...classes)=>classes.filter((className, index, array)=>{
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -2929,7 +2934,7 @@ var defaultAttributes = {
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -2968,7 +2973,7 @@ const Icon = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -2985,10 +2990,10 @@ const createLucideIcon = (iconName, iconNode)=>{
     const Component = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"])(({ className, ...props }, ref)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$Icon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
             ref,
             iconNode,
-            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["mergeClasses"])(`lucide-${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toKebabCase"])(iconName)}`, className),
+            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["mergeClasses"])(`lucide-${(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toKebabCase"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toPascalCase"])(iconName))}`, `lucide-${iconName}`, className),
             ...props
         }));
-    Component.displayName = `${iconName}`;
+    Component.displayName = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toPascalCase"])(iconName);
     return Component;
 };
 ;
@@ -3000,7 +3005,7 @@ const createLucideIcon = (iconName, iconNode)=>{
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -3019,7 +3024,7 @@ const __iconNode = [
         }
     ]
 ];
-const Play = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("Play", __iconNode);
+const Play = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("play", __iconNode);
 ;
  //# sourceMappingURL=play.js.map
 }}),
@@ -3039,7 +3044,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -3058,7 +3063,7 @@ const __iconNode = [
         }
     ]
 ];
-const ChevronDown = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("ChevronDown", __iconNode);
+const ChevronDown = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("chevron-down", __iconNode);
 ;
  //# sourceMappingURL=chevron-down.js.map
 }}),
@@ -3078,7 +3083,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var { g: global, __dirname } = __turbopack_context__;
 {
 /**
- * @license lucide-react v0.483.0 - ISC
+ * @license lucide-react v0.487.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
@@ -3097,7 +3102,7 @@ const __iconNode = [
         }
     ]
 ];
-const ChevronUp = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("ChevronUp", __iconNode);
+const ChevronUp = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("chevron-up", __iconNode);
 ;
  //# sourceMappingURL=chevron-up.js.map
 }}),

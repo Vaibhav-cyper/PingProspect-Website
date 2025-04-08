@@ -1,16 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams, redirect } from "next/navigation";
-import { Calendar, ArrowLeft } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, Share2, Bookmark, ThumbsUp } from "lucide-react";
 import Link from "next/link";
 import PortableText from "react-portable-text";
 import { getguide } from "../../../lib/services/blog";
-import { urlFor } from "@/lib/image";
+import { urlFor } from "../../../lib/image";
 import { Post } from "../guides";
 
-
 export default function BlogPost() {
-  const  params  = useParams() ;
+  const params = useParams();
   const slug = params.slug || "";
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);
@@ -60,38 +59,17 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
+    <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <Link
-          href="/guide"
-          className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Guides
-        </Link>
 
-        <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <div className="h-96 relative">
-            <img
-              src={urlFor(post.mainImage).url()}
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="p-8">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+        <article>
+          {/* Guide category  */}
+          <div className="space-y-6 sm:space-y-8">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
                 {post.category || "General"}
               </span>
-            </div>
-
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
-              {post.title}
-            </h1>
-
-            <div className="flex items-center text-sm text-gray-500 gap-4 mb-8">
-              <div className="flex items-center">
+              <div className="flex items-center text-gray-500 text-sm">
                 <Calendar className="h-4 w-4 mr-1" />
                 {new Date(post._createdAt).toLocaleDateString("en-US", {
                   month: "long",
@@ -101,27 +79,54 @@ export default function BlogPost() {
               </div>
             </div>
 
-            <div className="prose max-w-none text-gray-600">
+            {/* Guide Title  */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+              {post.title}
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-600">
+              {post.meta_description}
+            </p>
+            
+            {/* Guide Image  */}
+            <div className="h-96 relative mb-8 ">
+              <img
+                src={urlFor(post.mainImage).url()}
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="prose max-w-none text-xl">
               {/* {post.body} */}
               <PortableText
                 // Pass in block content straight from Sanity.io
                 content={post.body}
-                projectId = {process.env.PROJECTID}
-                dataset = {process.env.DATASETS}
-               
+                projectId={process.env.PROJECTID}
+                dataset={process.env.DATASETS}
                 // Optionally override marks, decorators, blocks, etc. in a flat
                 // structure without doing any gymnastics
                 serializers={{
-                  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h1 style={{ color: "black" }} {...props} />,
-                  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h2 style={{ color: "black" }} {...props} />,
-                  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h3 style={{ color: "black" }} {...props} />,
-                  h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h4 style={{ color: "black " }} {...props} />,
-                  p: (props: React.HTMLAttributes<HTMLHeadingElement>) => <p style={{ color: "black " }} {...props} />,
-                  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => <a style={{ color: "blue " }} {...props} />,
+                  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+                    <h1 style={{ color: "black" }} {...props} />
+                  ),
+                  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+                    <h2 style={{ color: "black" }} {...props} />
+                  ),
+                  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+                    <h3 style={{ color: "black" }} {...props} />
+                  ),
+                  h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+                    <h4 style={{ color: "black " }} {...props} />
+                  ),
+                  p: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+                    <p style={{ color: "black " }} {...props} />
+                  ),
+                  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+                    <a style={{ color: "blue " }} {...props} />
+                  ),
                   li: ({ children }: { children: React.ReactNode }) => (
                     <li className="special-list-item">{children}</li>
                   ),
-                  
                 }}
               />
             </div>
