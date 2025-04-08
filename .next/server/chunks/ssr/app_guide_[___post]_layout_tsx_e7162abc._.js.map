@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://E%3A/PingProspect/pingprospect-nextapp/app/guide/%5B...post%5D/layout.tsx"],"sourcesContent":["import type { Metadata } from \"next\";\r\n\r\n// importing components\r\n\r\nexport const metadata: Metadata = {\r\n  title: \"PingProspect | Automated Outreach Desktop App\",\r\n  description:\r\n    \"PingProspect can automate your Outreach and Generate Leads and Book Meetings using your Facebook.\",\r\n  keywords: [\r\n    \"pingprospect\",\r\n    \"smma\",\r\n    \"facebook DM\",\r\n    \"facebook lead gen\",\r\n    \"lead generation\",\r\n    \"facebook DM bot\",\r\n    \"Facebook prospecting\",\r\n    \"Facebook lead generation\",\r\n  ],\r\n  alternates: {\r\n    canonical: \"https://www.pingprospect.com\",\r\n  },\r\n};\r\n\r\nexport default function GuideLayout({children,}: Readonly<{ children: React.ReactNode }>) {\r\n  return (\r\n    <>\r\n    {children}\r\n    </>\r\n\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;;AAIO,MAAM,WAAqB;IAChC,OAAO;IACP,aACE;IACF,UAAU;QACR;QACA;QACA;QACA;QACA;QACA;QACA;QACA;KACD;IACD,YAAY;QACV,WAAW;IACb;AACF;AAEe,SAAS,YAAY,EAAC,QAAQ,EAA2C;IACtF,qBACE;kBACC;;AAIL","debugId":null}}]
-}
