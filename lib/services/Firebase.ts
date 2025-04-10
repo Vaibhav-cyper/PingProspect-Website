@@ -17,9 +17,9 @@ interface UserData {
 }
 
 class Firebase {
-  app: any;
-  auth: any;
-  db: any;
+  app: ReturnType<typeof initializeApp>;
+  auth: ReturnType<typeof getAuth>;
+  db: ReturnType<typeof getFirestore>;
   googleProvider = new GoogleAuthProvider();
 
   firebaseConfig = {

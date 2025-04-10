@@ -5,7 +5,7 @@ interface ContactFormData {
   message: string;
 }
 
-export const submitContactForm = async (data: ContactFormData): Promise<any> => {
+export const submitContactForm = async (data: ContactFormData): Promise<Response> => {
   try {
     const response = await fetch("https://pingprospect-air.gvaibhav2435.workers.dev/websitesupport", {
       method: "POST",

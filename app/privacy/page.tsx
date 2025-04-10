@@ -17,17 +17,17 @@ export default function Privacy() {
 
             <div className="prose max-w-none">
               <p className="text-gray-600 mb-6">
-                This Privacy Policy describes how Ping Prospect and its affiliates ("PingProspect" "we", "our" or "us") collect, use, and share information in connection with your use of our websites and desktop applications (collectively, the "Services"). This Privacy Policy (the "Privacy Policy") does not apply to information our customers may process when using our Services.
+                This Privacy Policy describes how Ping Prospect and its affiliates (&quot;PingProspect&quot; , &quot;we&quot;, &quot;our&quot; or &quot;us&quot;) collect, use, and share information in connection with your use of our websites and desktop applications (collectively, the &quot;Services&quot;). This Privacy Policy (the &quot;Privacy Policy&quot;) does not apply to information our customers may process when using our Services.
               </p>
 
               <p className="text-gray-600 mb-6">
-                We may collect and receive information about users of our Services ("users," "you," or "your") from various sources, including: (i) information you provide through your user account on the Services (your "Account") if you register for the Services; (ii) your use of the Services; and (iii) from third-party websites, services, and partners.
+                We may collect and receive information about users of our Services (&quot;users,&quot; &quot;you&quot; , or &quot;your&quot;) from various sources, including: (i) information you provide through your user account on the Services (your &quot;Account&quot;) if you register for the Services; (ii) your use of the Services; and (iii) from third-party websites, services, and partners.
               </p>
 
               <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">1. INFORMATION WE COLLECT</h2>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Information You Provide</h3>
               <p className="text-gray-600 mb-4">
-                Account Registration. When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email address. If you choose to refer a friend to our Services, we may also collect your friend's email address so that we may send them a referral or promotional code to sign up for our Services.
+                Account Registration. When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email address. If you choose to refer a friend to our Services, we may also collect your friend&apos;s email address so that we may send them a referral or promotional code to sign up for our Services.
               </p>
 
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Payment Information</h3>
@@ -101,7 +101,7 @@ export default function Privacy() {
                 You can use some of the features of the Services without registering, thereby limiting the type of information that we collect.
               </p>
 
-              <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">10. CHILDREN'S PRIVACY</h2>
+              <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">10. CHILDREN&apos;S PRIVACY</h2>
               <p className="text-gray-600 mb-6">
                 Ping Prospect does not knowingly collect information from children under the age of 13, and children under 13 are prohibited from using our Services.
               </p>

@@ -15,7 +15,7 @@ export default function PricingHero() {
             <span className="block text-blue-600">Limited Time Offer</span>
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-500">
-            Be among the first to experience PingProspect's powerful automation features completely free during our launch period.
+            Be among the first to experience PingProspect&apos;s powerful automation features completely free during our launch period.
           </p>
         </div>
       </div>

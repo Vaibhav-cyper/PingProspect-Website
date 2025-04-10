@@ -1,4 +1,4 @@
-import { ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight} from 'lucide-react';
 
 export default function FinalCTA() {
   return (

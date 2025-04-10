@@ -66,7 +66,7 @@ export default function LaunchOffer() {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-500">
-            * After the launch period, we'll introduce our regular pricing plans. Early adopters will receive special benefits and discounted rates.
+            * After the launch period, we&apos;ll introduce our regular pricing plans. Early adopters will receive special benefits and discounted rates.
           </p>
         </div>
       </div>

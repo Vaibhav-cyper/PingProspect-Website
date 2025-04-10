@@ -1,5 +1,5 @@
 import { MessageSquare } from 'lucide-react';
-import ContactForm from '../../components/Contact/ContactForm';
+import ContactForm from '../../components/ContactComponent/ContactForm';
 
 export default function ContactPage() {
   return (
@@ -16,7 +16,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="mt-4 text-xl text-gray-600">
-              Have a question? We'd love to hear from you.
+              Have a question? We&apos;d love to hear from you.
             </p>
           </div>
 

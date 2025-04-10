@@ -5,13 +5,14 @@ import { urlFor } from "../../../lib/image";
 
 // Define props for the layout
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
   children: React.ReactNode;
 };
 
 // Generate metadata dynamically based on the slug
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params; // Destructure slug from params
+  const resolvedParams = await params; // Resolve the params promise
+  const { slug } = resolvedParams; // Destructure slug from resolved params
   const post: Post = await getguide(slug);
   // Default metadata if no post is found
   if (!post) {

@@ -1,4 +1,6 @@
-import { MessageSquare, Upload, Users, Shield, Bot, RefreshCw } from 'lucide-react';
+import { MessageSquare, Upload, Users, Bot, RefreshCw } from 'lucide-react';
+import Image from "next/image"
+
 
 const features = [
   {
@@ -13,35 +15,41 @@ const features = [
       'Data validation and cleaning',
       'Bulk contact processing'
     ],
-    image: 'data-import.webp'
+    image: '/data-import.webp',
+    width: 600, // Adjust to your image's width
+    height: 400,
+    
   },
   {
     id: 'messaging',
     icon: MessageSquare,
-    label: 'Smart Messaging',
+    label: 'Personalized Messaging',
     title: 'Personalized Messaging Made Effortless',
     description: 'Send tailored messages to your contacts automatically with custom variables and templates.',
     benefits: [
       'Dynamic message templates',
       'Custom variable support',
-      'Personalization at scale',
-      'Message scheduling'
+      'Personalization at scale'  
     ],
-    image: 'personalized-messaging.webp'
+    image: '/personalized-messaging.webp',
+    width: 600, // Adjust to your image's width
+    height: 400
   },
   {
-    id: 'Reach more people',
+    id: 'Reach More Pople',
     icon: Users,
-    label: 'Greater Reach',
-    title: 'Reach more people',
-    description: 'Effortlessly reach multiple contacts without getting banned, thanks to our smart anti-spam system.',
+    label: 'Reach More Pople',
+    title: 'Reach More Pople ',
+    description: 'Effortlessly reach multiple contacts at once without getting banned, thanks to our smart anti-spam system.',
     benefits: [
       'Smart rate limiting',
       'Anti-spam protection',
       'Batch processing',
       'Queue management'
     ],
-    image: 'reach-more-people.webp'
+    image: '/reach-more-people.webp',
+    width: 600, // Adjust to your image's width
+    height: 400
   },
   {
     id: 'human-interaction',
@@ -55,9 +63,10 @@ const features = [
       'Human-like responses',
       'Activity simulation'
     ],
-    image: 'human-interaction.webp'
+    image: '/human-interaction.webp',
+    width: 600, // Adjust to your image's width
+    height: 400
   },
-
   {
     id: 'error-handling',
     icon: RefreshCw,
@@ -70,7 +79,9 @@ const features = [
       'Session persistence',
       'Connection management'
     ],
-    image: 'error-recovery.webp'
+    image: '/error-recovery.webp',
+    width: 600, // Adjust to your image's width
+    height: 400
   }
 ];
 
@@ -113,9 +124,12 @@ export default function FeatureSections() {
                   <div className={`absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-3xl transform ${
                     index % 2 === 0 ? 'rotate-2' : '-rotate-2'
                   }`}></div>
-                  <img
+                  <Image
                     src={feature.image}
                     alt={feature.title}
+                    width={feature.width}
+                    height={feature.height}
+                    // fill={feature.fill}
                     className="relative rounded-2xl shadow-lg"
                   />
                 </div>

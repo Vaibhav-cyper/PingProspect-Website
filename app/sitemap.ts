@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getallguides } from "../lib/services/blog";
 import { Post } from "./guide/guides";
 
-export default async function (): Promise<MetadataRoute.Sitemap> {
+export default async function Sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://pingprospect.com";
   const response = await getallguides();
   const guides = response.map((guideposts:Post) => {

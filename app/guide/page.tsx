@@ -5,7 +5,7 @@ import { Book, Calendar } from "lucide-react";
 import { getallguides } from "../../lib/services/blog";
 import { urlFor } from "../../lib/image";
 import { Post } from "./guides";
-
+import Image from 'next/image';
 
 export default function GuideList() {
   const [ListPosts, setListPost] = useState<Post[] | null>(null);
@@ -47,7 +47,7 @@ export default function GuideList() {
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="h-48 overflow-hidden">
-                <img
+                <Image
                   src={urlFor(post.mainImage).url()}
                   alt={post.title}
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"

@@ -14,7 +14,7 @@ export interface Post {
     };
   
     title: string;
-    body: [Object];
+    body: [object];
     meta_description: string;
     keywords: string[];
     readTime: string;

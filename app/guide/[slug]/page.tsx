@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams, redirect } from "next/navigation";
-import { ArrowLeft, Clock, Calendar, Share2, Bookmark, ThumbsUp } from "lucide-react";
-import Link from "next/link";
+import { Calendar } from "lucide-react";
+import Image from 'next/image';
 import PortableText from "react-portable-text";
 import { getguide } from "../../../lib/services/blog";
 import { urlFor } from "../../../lib/image";
@@ -89,7 +89,7 @@ export default function BlogPost() {
             
             {/* Guide Image  */}
             <div className="h-96 relative mb-8 ">
-              <img
+              <Image
                 src={urlFor(post.mainImage).url()}
                 alt={post.title}
                 className="w-full h-full object-cover"

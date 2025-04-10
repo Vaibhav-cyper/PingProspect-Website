@@ -17,12 +17,12 @@ export default function Terms() {
             <div className="prose max-w-none">
               <h2 className="text-xl font-bold text-gray-900 mb-4">1. Acceptance</h2>
               <p className="text-gray-600 mb-6">
-                By using or visiting our website and downloading Ping Prospect Desktop APP, you signify that you have read, understand, and agree to be bound by our "Terms of service or Agreement".
+                By using or visiting our website and downloading Ping Prospect Desktop APP, you signify that you have read, understand, and agree to be bound by our &quot;Terms of service or Agreement&quot;.
               </p>
 
               <h2 className="text-xl font-bold text-gray-900 mb-4">2. Ownership</h2>
               <p className="text-gray-600 mb-6">
-                You may not claim intellectual or exclusive ownership rights to any of our products. All products are property of pingprospect.com. They are provided "as is" without warranty of any kind, expressed or implied. We shall not be liable for any damages, including but not limited to, direct, indirect, special, incidental, or consequential damages or losses that occur out of the use or inability to use our products.
+                You may not claim intellectual or exclusive ownership rights to any of our products. All products are property of pingprospect.com. They are provided &quot;as is&quot; without warranty of any kind, expressed or implied. We shall not be liable for any damages, including but not limited to, direct, indirect, special, incidental, or consequential damages or losses that occur out of the use or inability to use our products.
               </p>
 
               <h2 className="text-xl font-bold text-gray-900 mb-4">3. Support</h2>
@@ -32,7 +32,7 @@ export default function Terms() {
 
               <h2 className="text-xl font-bold text-gray-900 mb-4">4. Payments & Refund Policy</h2>
               <p className="text-gray-600 mb-6">
-                Our order process is conducted by our online reseller Stripe.com. Stripe.com is the Merchant of Record for all our orders. Stripe provides all customer service inquiries and handles returns. We provide a 7-day money-back guarantee as part of their refund policy from the moment of purchase. You can request money back if the service really doesn't satisfy you or you are faced with some service issues.
+                Our order process is conducted by our online reseller Stripe.com. Stripe.com is the Merchant of Record for all our orders. Stripe provides all customer service inquiries and handles returns. We provide a 7-day money-back guarantee as part of their refund policy from the moment of purchase. You can request money back if the service really doesn&apos;t satisfy you or you are faced with some service issues.
               </p>
               <p className="text-gray-600 mb-6">
                 Please, email{' '}

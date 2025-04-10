@@ -1,4 +1,4 @@
-export const addSubscriber = async (fullName: string, email: string): Promise<any> => {
+export const addSubscriber = async (fullName: string, email: string): Promise<Response> => {
   try {
     const response = await fetch("https://pingprospect-air.gvaibhav2435.workers.dev/addsubscriber", {
       method: "POST",
