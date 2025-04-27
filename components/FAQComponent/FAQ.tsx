@@ -12,7 +12,7 @@ export default function FAQ() {
           You may have some questions
           </h2>
           <p className="mt-4 text-lg font-medium text-gray-700">
-          Whether it's about how messages sent, our refund guarantee, or something more technical, we've got your back.
+          Whether it&apos;s about how messages sent, our refund guarantee, or something more technical, we&apos;ve got your back.
           </p>
         </div>
         <div className="bg-white rounded-2xl shadow-sm divide-y divide-gray-200  ">
