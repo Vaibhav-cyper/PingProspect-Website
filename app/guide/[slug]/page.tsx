@@ -16,33 +16,7 @@ export default function BlogPost() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const components = {
-    block: {
-      // catch all non-heading blocks as "normal"
-      normal: ({ children }) => (
-        <p className="mb-6 leading-relaxed">{children}</p>
-      ),
-      // headings keep their own spacing
-      h1: ({ children }) => <h1 className="mt-8 mb-4 text-3xl">{children}</h1>,
-      h2: ({ children }) => <h2 className="mt-8 mb-4 text-2xl">{children}</h2>,
-      // …and so on
-    },
-    list: {
-      bullet: ({ children }) => (
-        <ul className="list-disc ml-6 mb-6">{children}</ul>
-      ),
-    },
-    listItem: {
-      bullet: ({ children }) => <li className="mb-2">{children}</li>,
-    },
-    marks: {
-      link: ({ children, value }) => (
-        <a href={value.href} className="underline">
-          {children}
-        </a>
-      ),
-    },
-  };
+ 
 
   useEffect(() => {
     async function fetchPosts() {
