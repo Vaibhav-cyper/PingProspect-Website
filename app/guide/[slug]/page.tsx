@@ -2,8 +2,9 @@
 import { useEffect, useState } from "react";
 import { useParams, redirect } from "next/navigation";
 import { Calendar } from "lucide-react";
-import Image from 'next/image';
-import PortableText from "react-portable-text";
+import Image from "next/image";
+import { PortableText } from "@portabletext/react";
+// import PortableText from "react-portable-text";
 import { getguide } from "../../../lib/services/blog";
 import { urlFor } from "../../../lib/image";
 import { Post } from "../guides";
@@ -15,6 +16,34 @@ export default function BlogPost() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  const components = {
+    block: {
+      // catch all non-heading blocks as "normal"
+      normal: ({ children }) => (
+        <p className="mb-6 leading-relaxed">{children}</p>
+      ),
+      // headings keep their own spacing
+      h1: ({ children }) => <h1 className="mt-8 mb-4 text-3xl">{children}</h1>,
+      h2: ({ children }) => <h2 className="mt-8 mb-4 text-2xl">{children}</h2>,
+      // …and so on
+    },
+    list: {
+      bullet: ({ children }) => (
+        <ul className="list-disc ml-6 mb-6">{children}</ul>
+      ),
+    },
+    listItem: {
+      bullet: ({ children }) => <li className="mb-2">{children}</li>,
+    },
+    marks: {
+      link: ({ children, value }) => (
+        <a href={value.href} className="underline">
+          {children}
+        </a>
+      ),
+    },
+  };
+
   useEffect(() => {
     async function fetchPosts() {
       try {
@@ -22,6 +51,9 @@ export default function BlogPost() {
           if (typeof slug === "string") {
             const Postresult = await getguide(slug);
             setPost(Postresult || null);
+            if (Postresult) {
+              console.log(Postresult);
+            }
           } else {
             setError(true);
           }
@@ -61,9 +93,7 @@ export default function BlogPost() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-
         <article>
-          {/* Guide category  */}
           <div className="space-y-6 sm:space-y-8">
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
@@ -78,55 +108,73 @@ export default function BlogPost() {
                 })}
               </div>
             </div>
-
-            {/* Guide Title  */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
               {post.title}
             </h1>
             <p className="text-lg sm:text-xl text-gray-600">
               {post.meta_description}
             </p>
-            
-            {/* Guide Image  */}
             <div className="h-96 relative mb-8 ">
               <Image
                 src={urlFor(post.mainImage).url()}
                 alt={post.title}
+                height={720}
+                width={1280}
                 className="w-full h-full object-cover"
               />
             </div>
-
-            <div className="prose max-w-none text-xl">
-              {/* {post.body} */}
+            <div className="prose max-w-none">
               <PortableText
-                // Pass in block content straight from Sanity.io
-                content={post.body}
-                projectId={process.env.PROJECTID}
-                dataset={process.env.DATASETS}
-                // Optionally override marks, decorators, blocks, etc. in a flat
-                // structure without doing any gymnastics
-                serializers={{
-                  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-                    <h1 style={{ color: "black" }} {...props} />
-                  ),
-                  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-                    <h2 style={{ color: "black" }} {...props} />
-                  ),
-                  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-                    <h3 style={{ color: "black" }} {...props} />
-                  ),
-                  h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-                    <h4 style={{ color: "black " }} {...props} />
-                  ),
-                  p: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-                    <p style={{ color: "black " }} {...props} />
-                  ),
-                  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-                    <a style={{ color: "blue " }} {...props} />
-                  ),
-                  li: ({ children }: { children: React.ReactNode }) => (
-                    <li className="special-list-item">{children}</li>
-                  ),
+                value={
+                  Array.isArray(post.body)
+                    ? (post.body as import("@portabletext/types").TypedObject[])
+                    : []
+                }
+                components={{
+                  block: {
+                    normal: ({ children }) => (
+                      <p className="my-5 text-lg leading-relaxed">{children}</p>
+                    ),
+                    h1: ({ children }) => (
+                      <h1 className="mt-8 mb-4 text-3xl">{children}</h1>
+                    ),
+                    h3: ({ children }) => (
+                      <h3 className="mt-8 mb-4 text-2xl font-bold">{children}</h3>
+                    ),
+                    h4: ({ children }) => (
+                      <h4 className="mt-8 mb-4 text-xl font-bold">{children}</h4>
+                    ),
+                    
+                    // etc…
+                    blockquote: ({ children }) => (
+                      <blockquote className="border-l-4 border-gray-300 pl-4 italic my-6">
+                        {children}
+                      </blockquote>
+                    ),
+                  },
+                  list: {
+                    bullet: ({ children }) => (
+                      <ul className="list-disc ml-6 mb-6">{children}</ul>
+                    ),
+                    number: ({ children }) => (
+                      <ol className="list-decimal ml-6 mb-6">{children}</ol>
+                    ),
+                  },
+                  listItem: {
+                    bullet: ({ children }) => (
+                      <li className="mb-2">{children}</li>
+                    ),
+                    number: ({ children }) => (
+                      <li className="mb-2">{children}</li>
+                    ),
+                  },
+                  marks: {
+                    link: ({ children, value }) => (
+                      <a href={value.href} className="underline text-blue-600">
+                        {children}
+                      </a>
+                    ),
+                  },
                 }}
               />
             </div>

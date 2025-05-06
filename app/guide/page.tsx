@@ -50,6 +50,8 @@ export default function GuideList() {
                 <Image
                   src={urlFor(post.mainImage).url()}
                   alt={post.title}
+                  width={1280}
+                  height={720}
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                 />
               </div>
