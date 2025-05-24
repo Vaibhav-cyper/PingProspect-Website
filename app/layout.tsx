@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "PingProspect | Automated Outreach Desktop App",
   description: "PingProspect can automate your Outreach and Generate Leads and Book Meetings using your Facebook.",
-  keywords : ["pingprospect", "smma", "facebook DM", "facebook lead gen", "lead generation","facebook DM bot","Facebook prospecting", "Facebook lead generation"],
+  keywords : ["pingprospect","facebook lead gen", "lead generation","facebook outreach automation", "Facebook lead generation" , "facebook outreach automation", "automated messages"],
   alternates: {
     canonical: 'https://www.pingprospect.com',
   },
