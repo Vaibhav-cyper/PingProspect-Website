@@ -112,6 +112,9 @@ export default function BlogPost() {
                     h1: ({ children }) => (
                       <h1 className="mt-8 mb-4 text-3xl">{children}</h1>
                     ),
+                    h2: ({ children }) => (
+                      <h2 className="mt-8 mb-4 text-3xl">{children}</h2>
+                    ),
                     h3: ({ children }) => (
                       <h3 className="mt-8 mb-4 text-2xl font-bold">{children}</h3>
                     ),
